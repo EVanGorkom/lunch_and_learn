@@ -1,24 +1,37 @@
-# README
+# Lunch and Learn
+## About
+This app ... 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the back-end repository of this app. Please see [HERE](https://github.com/EVanGorkom/lunch_and_learn) for the repository.
 
-Things you may want to cover:
+## Features
+- **feature 1**: 
+- **feature 2**: 
+- **feature 3**: 
 
-* Ruby version
 
-* System dependencies
+## Built With: 
+- Ruby 3.2.2
+- Rails 7.0.8
+- RSpec 3.12
 
-* Configuration
+## Branch Naming Conventions
+When branching on this repo please use the conventions of `#-user_story`, ex `1-user_story`
 
-* Database creation
+## API Usage
+- This app uses:
+  - [OpenAI API](https://platform.openai.com/)
+  - [D&D 5e SRD API](https://5e-bits.github.io/docs/) 
+## System dependencies
 
-* Database initialization
+## Configuration
 
-* How to run the test suite
+## Database creation
+## Database initialization
+## How to run the test suite
+## Services (job queues, cache servers, search engines, etc.)
+## Deployment instructions
+## Challenges + Wins 
+## Contributors 
+- Ethan Van Gorkom | [GitHub](https://github.com/EVanGorkom) | [LinkedIn](https://www.linkedin.com/in/evangorkom/)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
