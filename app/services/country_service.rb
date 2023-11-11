@@ -1,6 +1,6 @@
 class CountryService
   def conn
-    Faraday.new(url: "https://restcountries.com/v3.1/")
+    Faraday.new(url: "https://restcountries.com")
   end
 
   def get_url(link)
@@ -9,6 +9,10 @@ class CountryService
   end
 
   def find_all
-    get_url("all")
+    get_url("/v3.1/all")
+  end
+
+  def search_country(country_name)
+    get_url("/v3.1/name/#{country_name}")
   end
 end
