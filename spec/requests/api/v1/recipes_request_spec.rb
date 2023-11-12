@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Recipes by Country" do
-  it "can retrieve all recipes from a certain country", :vcr do
+  it "Can retrieve all recipes from a specific country", :vcr do
     params = { country: "Guatemala" }
     get "/api/v1/recipes", params: params
 
@@ -19,7 +19,25 @@ RSpec.describe "Recipes by Country" do
     expect(json_response['data'][0]["attributes"]["image"]).to be_a String
   end
 
-  it "sad path of retrieving recipes", :vcr do
+  xit "Can retrieve all recipes from a random country" do
+    params = { country: "random" }
+    get "/api/v1/recipes", params: params
+
+    expect(response).to be_successful
+
+    json_response = JSON.parse(response.body)
+
+    expect(json_response['data']).to be_an Array
+
+    expect(json_response['data'][0]["id"]).to eq nil
+    expect(json_response['data'][0]["type"]).to eq "recipes"
+    expect(json_response['data'][0]["attributes"]["title"]).to be_a String
+    expect(json_response['data'][0]["attributes"]["url"]).to be_a String
+    expect(json_response['data'][0]["attributes"]["country"]).to be_a String
+    expect(json_response['data'][0]["attributes"]["image"]).to be_a String
+  end
+
+  it "It returns an empty array of data if the request is invalid", :vcr do
     params = { country: "asdfjkl;" }
     get "/api/v1/recipes", params: params
 
