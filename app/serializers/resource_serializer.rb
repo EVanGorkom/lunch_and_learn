@@ -3,12 +3,12 @@ class ResourceSerializer
   
   set_id :id 
   set_type :learning_resources
-  attributes :country, :video, :images
+  attributes :country
 
   attribute :video do |object|
     {
-      title: object.video_title,
-      youtube_video_id: object.youtube_video_id
+      title: object.video.video_title,
+      youtube_video_id: object.video.youtube_video_id
     }
   end
 
