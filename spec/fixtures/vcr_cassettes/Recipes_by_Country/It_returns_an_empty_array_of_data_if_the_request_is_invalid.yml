@@ -19,7 +19,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Sun, 12 Nov 2023 00:56:38 GMT
+      - Sun, 12 Nov 2023 02:19:18 GMT
       Server:
       - Apache/2.4.38 (Debian)
       Content-Type:
@@ -29,7 +29,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"Page Not Found","_links":{"self":{"href":"/v3.1/name/asdfjkl;","templated":false}}}'
-  recorded_at: Sun, 12 Nov 2023 00:56:38 GMT
+  recorded_at: Sun, 12 Nov 2023 02:19:18 GMT
 - request:
     method: get
     uri: https://api.edamam.com/api/recipes/v2?app_id=1753013e&app_key=94e86f33505e6fc237062131bac01666&q=&type=public
@@ -51,7 +51,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sun, 12 Nov 2023 00:56:39 GMT
+      - Sun, 12 Nov 2023 02:19:19 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -63,15 +63,15 @@ http_interactions:
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       X-Served-By:
-      - ip-10-0-1-228.ec2.internal/10.0.1.228
+      - ip-10-0-1-51.ec2.internal/10.0.1.51
       Content-Language:
       - en
       Strict-Transport-Security:
       - max-age=15552001
       X-Request-Id:
-      - b5d26ef2723c73e663d782792e9cbc5e
+      - 3dc14155719e359e0ea09f2100b6d7c1
     body:
       encoding: UTF-8
       string: '{"from":1,"to":0,"count":0,"_links":{},"hits":[]}'
-  recorded_at: Sun, 12 Nov 2023 00:56:39 GMT
+  recorded_at: Sun, 12 Nov 2023 02:19:19 GMT
 recorded_with: VCR 6.2.0
