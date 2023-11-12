@@ -1,7 +1,9 @@
 class ResourcePoro
-  attr_reader :video, :images
+  attr_reader :id, :country, :video, :images
 
-  def initialize(video, images)
+  def initialize(video, images, country)
+    @id = nil
+    @country = country
     @video = video
     @images = images
   end
