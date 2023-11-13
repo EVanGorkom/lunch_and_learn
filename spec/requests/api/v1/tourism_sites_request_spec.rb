@@ -6,5 +6,15 @@ RSpec.describe "Tourism Sites Index" do
     get "/api/v1/tourism_sites", params: params
 
     expect(response).to be_successful
+
+    json_response = JSON.parse(response.body)
+
+    expect(json_response['data']).to be_an(Array)
+
+    expect(json_response['data'][0]['id']).to be nil
+    expect(json_response['data'][0]['type']).to eq("tourist_site")
+    expect(json_response['data'][0]['attributes']['name']).to eq('Palais du Louvre')
+    expect(json_response['data'][0]['attributes']['address']).to eq("Louvre Palace, Place du Lieutenant Henri Karcher, 75001 Paris, France")
+    expect(json_response['data'][0]['attributes']['place_id']).to eq("513025c70ed2af024059358e28f2356e4840f00101f90159c731000000000092031050616c616973206475204c6f75767265")
   end
 end
