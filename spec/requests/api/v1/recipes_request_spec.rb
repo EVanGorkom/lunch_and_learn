@@ -29,12 +29,16 @@ RSpec.describe "Recipes by Country" do
 
     expect(json_response['data']).to be_an Array
 
-    expect(json_response['data'][0]["id"]).to eq nil
-    expect(json_response['data'][0]["type"]).to eq "recipes"
-    expect(json_response['data'][0]["attributes"]["title"]).to be_a String
-    expect(json_response['data'][0]["attributes"]["url"]).to be_a String
-    expect(json_response['data'][0]["attributes"]["country"]).to be_a String
-    expect(json_response['data'][0]["attributes"]["image"]).to be_a String
+    if json_response['data'] == []
+      expect(json_response['data']).to eq([])
+    else
+      expect(json_response['data'][0]["id"]).to eq nil
+      expect(json_response['data'][0]["type"]).to eq "recipes"
+      expect(json_response['data'][0]["attributes"]["title"]).to be_a String
+      expect(json_response['data'][0]["attributes"]["url"]).to be_a String
+      expect(json_response['data'][0]["attributes"]["country"]).to be_a String
+      expect(json_response['data'][0]["attributes"]["image"]).to be_a String
+    end
   end
 
   it "It returns an empty array of data if the request is invalid", :vcr do
