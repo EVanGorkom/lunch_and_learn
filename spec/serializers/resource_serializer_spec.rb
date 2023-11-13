@@ -9,12 +9,16 @@ RSpec.describe 'Resource Serializer' do
     }
     images_data = [
       {
-        'alt_description' => 'Beautiful Learning Image',
-        'urls' => { 'raw' => 'http://example.com/learning_image.jpg' }
+        alt_description: 'Beautiful Learning Image',
+        urls: { 
+          raw: 'http://example.com/learning_image.jpg' 
+        }
       },
       {
-        'alt_description' => 'Another Learning Image',
-        'urls' => { 'raw' => 'http://example.com/another_learning_image.jpg' }
+        alt_description: 'Another Learning Image',
+        urls: { 
+          raw: 'http://example.com/another_learning_image.jpg' 
+        }
       }
     ]
     

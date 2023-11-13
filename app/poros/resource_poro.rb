@@ -22,8 +22,8 @@ class ResourcePoro
   def parse_images(images)
     images.map do |image|
       { 
-        alt_tag: image["alt_description"],
-        url: image["urls"]["raw"]
+        alt_tag: image[:alt_description],
+        url: image[:urls][:raw]
       }
     end
   end
