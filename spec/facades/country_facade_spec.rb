@@ -27,5 +27,25 @@ RSpec.describe CountryFacade, type: :facade do
 
       expect(found_country).to eq country_name
     end
+
+    describe "find_geo_country(country_name)", :vcr do
+      it "Happy Path" do
+        country_facade = CountryFacade.new
+        country_name = 'Ireland'
+
+        geo_location = country_facade.find_geo_country(country_name)
+
+        expect(geo_location).to be_a String
+      end
+
+      it "Sad Path" do
+        country_facade = CountryFacade.new
+        country_name = "Faerun"
+
+        geo_location = country_facade.find_geo_country(country_name)
+
+        expect(geo_location).to be nil
+      end
+    end
   end
 end

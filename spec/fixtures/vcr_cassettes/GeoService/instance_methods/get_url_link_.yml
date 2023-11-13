@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.geoapify.com/v2/places?apiKey=a67c1376b76741048dedb61cc8ba7aa9&categories=tourism.sights&filter=circle:6.26,53.35,1000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 18:03:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - '1.0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - accept, accept-language, content-language, access-control-max-age, access-control-allow-headers,
+        access-control-allow-methods, access-control-allow-origin, allow, api-version,
+        cf-ray, content-encoding, content-type, date, expect-ct, server, status, vary,
+        cache-control, etag, last-modified, expires, host, cf-timezone, cf-connecting-ip,
+        accept-encoding, x-forwarded-for, x-forwarded-proto, cf-visitor, user-agent,
+        cdn-loop, cf-ipcity, cf-ipcontinent, cf-ipcountry, cf-iplatitude, cf-iplongitude,
+        cf-metro-code, cf-postal-code, cf-region, cf-region-code, x-forwarded-port
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Cache-Control:
+      - private, max-age=0, no-cache
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=U36CgDIban0IX6eNd%2BAknw1ofLMecu9wIY7RZx8DwT72KQjb76orYfpoEHxY6zCDTlTpjsQPi2j08E4cGKzNvfM0NOxvWuoYInYdju5Mvf9XrSjWzx4%2BZPjv%2BHIZ9WTd7Lc%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8258ef21df2a0c0b-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"FeatureCollection","features":[]}'
+  recorded_at: Mon, 13 Nov 2023 18:03:55 GMT
+recorded_with: VCR 6.2.0
