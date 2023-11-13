@@ -19,7 +19,7 @@ RSpec.describe "Recipes by Country" do
     expect(json_response['data'][0]["attributes"]["image"]).to be_a String
   end
 
-  xit "Can retrieve all recipes from a random country" do
+  it "Can retrieve all recipes from a random country" do
     params = { country: "random" }
     get "/api/v1/recipes", params: params
 

@@ -1,0 +1,96 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://restcountries.com/v3.1/name/Antartica
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 18:23:24 GMT
+      Server:
+      - Apache/2.4.38 (Debian)
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '36'
+    body:
+      encoding: UTF-8
+      string: '{"status":404,"message":"Not Found"}'
+  recorded_at: Mon, 13 Nov 2023 18:23:24 GMT
+- request:
+    method: get
+    uri: https://api.geoapify.com/v2/places?apiKey=a67c1376b76741048dedb61cc8ba7aa9&categories=tourism.sights&filter=circle:,1000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.11
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 18:23:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '106'
+      Connection:
+      - keep-alive
+      Api-Version:
+      - '1.0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - accept, accept-language, content-language, access-control-max-age, access-control-allow-headers,
+        access-control-allow-methods, access-control-allow-origin, allow, api-version,
+        cf-ray, content-encoding, content-type, date, expect-ct, server, status, vary,
+        cache-control, etag, last-modified, expires, host, cf-timezone, cf-connecting-ip,
+        accept-encoding, x-forwarded-for, x-forwarded-proto, cf-visitor, user-agent,
+        cdn-loop, cf-ipcity, cf-ipcontinent, cf-ipcountry, cf-iplatitude, cf-iplongitude,
+        cf-metro-code, cf-postal-code, cf-region, cf-region-code, x-forwarded-port
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - private, max-age=0, no-cache
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=DMVReOYDHeHMEz%2FlapXdW7TYUNySz%2F6ANyZFW8qSzPvzeSyrP%2FY9YU%2FzkAnNRSX5gh%2BolqLS02oY3cyjQtbXTP2yzZmh1NyQb4gUPofhx9QWLNSqkx0tnQi9hIXiuNFwPN4%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 82590bb54b09283f-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"statusCode":400,"error":"Bad Request","message":"\"filter[0]\" does
+        not match any of the allowed types"}'
+  recorded_at: Mon, 13 Nov 2023 18:23:25 GMT
+recorded_with: VCR 6.2.0
