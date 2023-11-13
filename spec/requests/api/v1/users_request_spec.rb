@@ -2,16 +2,18 @@ require 'rails_helper'
 
 RSpec.describe "Users" do
   it "Can create a new user" do
-    user = {
-      'name': "Snoopy",
-      'email': "snoopdoggydog@gmail.com",
-      'password': "password",
-      'password_confirmation': "password"
+    user_data = {
+      user: {
+        'name': "Snoopy",
+        'email': "snoopdoggydog@gmail.com",
+        'password': "password",
+        'password_confirmation': "password"
+      }
     }
     headers = {
       content_type: "application/json"
     }
-    post "/api/v1/users", headers: headers, params: user, as: :json
+    post "/api/v1/users", headers: headers, params: user_data, as: :json
 
     expect(response).to be_successful
 
@@ -30,16 +32,18 @@ RSpec.describe "Users" do
   end
 
   it "Will send a error message in json if the passwords do not match" do
-    user_params = {
-      name: "Snoopy",
-      email: "snoopdoggydog@gmail.com",
-      password: "password",
-      password_confirmation: "wrong-password"
+    user_data = {
+      user: {
+        name: "Snoopy",
+        email: "snoopdoggydog@gmail.com",
+        password: "password",
+        password_confirmation: "wrong-password"
+      }
     }
     headers = {
       content_type: "application/json"
     }
-    post "/api/v1/users", headers: headers, params: user_params, as: :json
+    post "/api/v1/users", headers: headers, params: user_data, as: :json
 
     expect(response).to be_successful
 
