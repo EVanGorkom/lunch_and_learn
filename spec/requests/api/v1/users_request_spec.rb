@@ -15,7 +15,7 @@ RSpec.describe "Users" do
     }
     post "/api/v1/users", headers: headers, params: user_data, as: :json
 
-    expect(response).to be_successful
+    expect(response).to have_http_status(201)
 
     new_user = User.last
     expect(new_user.name).to eq("Snoopy")
@@ -45,9 +45,42 @@ RSpec.describe "Users" do
     }
     post "/api/v1/users", headers: headers, params: user_data, as: :json
 
-    expect(response).to be_successful
+    expect(response).to have_http_status(422)
 
     json_response = JSON.parse(response.body)
     expect(json_response["error"]).to eq("Passwords do not match")
+  end
+
+  it "Will send an error message in json if the email is already used" do
+    # Creating a user
+    user_data = { 
+      user: {
+        name: "Snoopy",
+        email: "snoopdoggydog@gmail.com",
+        password: "password",
+        password_confirmation: "password"
+      }
+    }
+    headers = { content_type: "application/json" }
+    post "/api/v1/users", headers: headers, params: user_data, as: :json
+
+    # New user using a taken email
+    user_data = {
+      user: {
+        name: "Droopy",
+        email: "snoopdoggydog@gmail.com",
+        password: "password",
+        password_confirmation: "password"
+      }
+    }
+    headers = {
+      content_type: "application/json"
+    }
+    post "/api/v1/users", headers: headers, params: user_data, as: :json
+
+    expect(response).to have_http_status(409)
+
+    json_response = JSON.parse(response.body)
+    expect(json_response["error"]).to eq("That email is already in use")
   end
 end
