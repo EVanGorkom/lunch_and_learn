@@ -12,7 +12,7 @@ RSpec.describe "Sessions" do
 
     post '/api/v1/sessions', params: user_data, as: :json
 
-    expect(response).to have_http_status(200)
+    expect(response).to have_http_status(201)
 
     json_response = JSON.parse(response.body)
     expect(json_response["data"]).to be_a Hash

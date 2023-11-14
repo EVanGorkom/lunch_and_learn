@@ -3,12 +3,12 @@ class Api::V1::SessionsController < ApplicationController
     if User.exists?(email: session_params[:email])
       user = User.find_by(email: session_params[:email])
       if user.authenticate(session_params[:password])
-        render json: UserSerializer.new(user), status: :ok
+        render json: UserSerializer.new(user), status: 201
       else
-        render json: { error: "Incorrect email or password. You're welcome to try again though." }, status: :unauthorized
+        render json: { error: "Incorrect email or password. You're welcome to try again though." }, status: 401
       end
     else
-      render json: { error: "Incorrect email or password. You're welcome to try again though." }, status: :unauthorized
+      render json: { error: "Incorrect email or password. You're welcome to try again though." }, status: 401
     end
   end
 
