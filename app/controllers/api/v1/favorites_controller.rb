@@ -1,8 +1,20 @@
 class Api::V1::FavoritesController < ApplicationController
   def create
+    user = User.find_by(api_key: params[:api_key])
+
+    if user
+      favorite = user.favorites.create(favorite_params)
+      render json: { success: "Favorite added successfully" }, status: 201
+    else
+      render json: { error: "This is not a valid api key"}, status: 401
+    end
+  end
+
+  def index
     if User.exists?(api_key: params[:api_key])
-      Favorite.create(favorite_params)
-      render json: { success: "Favorite added successfully"}, status: 201
+      user = User.find_by(api_key: params[:api_key])
+      serialized_favs = FavoriteSerializer.new(user.favorites)
+      render json: serialized_favs, status: 200
     else
       render json: { error: "This is not a valid api key"}, status: 401
     end

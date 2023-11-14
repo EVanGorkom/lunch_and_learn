@@ -53,7 +53,7 @@ RSpec.describe "Users" do
 
   it "Will send an error message in json if the email is already used" do
     # Creating a user
-    user_data = { 
+    user_data1 = { 
       user: {
         name: "Snoopy",
         email: "snoopdoggydog@gmail.com",
@@ -62,10 +62,10 @@ RSpec.describe "Users" do
       }
     }
     headers = { content_type: "application/json" }
-    post "/api/v1/users", headers: headers, params: user_data, as: :json
+    post "/api/v1/users", headers: headers, params: user_data1, as: :json
 
     # New user using a taken email
-    user_data = {
+    user_data2 = {
       user: {
         name: "Droopy",
         email: "snoopdoggydog@gmail.com",
@@ -76,7 +76,7 @@ RSpec.describe "Users" do
     headers = {
       content_type: "application/json"
     }
-    post "/api/v1/users", headers: headers, params: user_data, as: :json
+    post "/api/v1/users", headers: headers, params: user_data2, as: :json
 
     expect(response).to have_http_status(409)
 
