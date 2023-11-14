@@ -19,7 +19,7 @@ RSpec.describe 'Learning Resources by Country' do
     expect(json_response['data']['attributes']['video']['title']).to be_a String
     expect(json_response['data']['attributes']['video']['youtube_video_id']).to be_a String
 
-    # Image information (first 2)
+    # Image information (first 2 images)
     expect(json_response['data']['attributes']['images'][0]['alt_tag']).to be_a String
     expect(json_response['data']['attributes']['images'][0]['url']).to be_a String
     expect(json_response['data']['attributes']['images'][1]['alt_tag']).to be_a String
