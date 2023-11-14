@@ -8,8 +8,7 @@ RSpec.describe 'Favorites by User' do
 
     api = { api_key: "#{user.api_key}" }
 
-    get "/api/v1/favorites", params: api #, as: :json
-    # Adding the ghost code above changes the route request to a 'post' even if it's written as a 'get'
+    get "/api/v1/favorites", params: api
 
     expect(response).to have_http_status(200)
 
