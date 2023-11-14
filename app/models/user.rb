@@ -3,6 +3,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, confirmation: true
 
+  has_many :favorites
+
   has_secure_password
 
   before_create :generate_api_key
