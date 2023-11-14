@@ -8,6 +8,8 @@ class ResourcePoro
     @images = parse_images(images_data)
   end
 
+  private 
+  
   def parse_video(video)
     if video == nil
       {}

@@ -14,6 +14,11 @@ RSpec.describe "Favorites" do
     post "/api/v1/favorites", params: new_fav_data, as: :json
 
     expect(response).to have_http_status(201)
+
+    json_response = JSON.parse(response.body)
+
+    expect(json_response).to be_a Hash
+    expect(json_response['success']).to eq("Favorite added successfully")
   end
 
   it "Will return an error if the api key is invalid" do
@@ -27,5 +32,10 @@ RSpec.describe "Favorites" do
     post "/api/v1/favorites", params: new_fav_data, as: :json
 
     expect(response).to have_http_status(401)
+
+    json_response = JSON.parse(response.body)
+
+    expect(json_response).to be_a Hash
+    expect(json_response['error']).to eq("This is not a valid api key")
   end
 end
