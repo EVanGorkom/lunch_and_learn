@@ -24,6 +24,7 @@
 
 ## Schema Visualization
 
+![Photo of the code's schema](https://user-images.githubusercontent.com/132889569/282963020-0d82563f-97b0-4fcd-a5f5-b4e16c05acd0.png)
 
 ## To Add
 
